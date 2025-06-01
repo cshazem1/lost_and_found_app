@@ -1,13 +1,11 @@
 class HomeStoreRatingModel {
-  HomeStoreRatingModel({
-      this.rate, 
-      this.count,});
+  HomeStoreRatingModel({this.rate, this.count});
 
   HomeStoreRatingModel.fromJson(dynamic json) {
     rate = json['rate'];
     count = json['count'];
   }
-  double? rate;
+  num? rate;
   int? count;
 
   Map<String, dynamic> toJson() {
@@ -16,5 +14,4 @@ class HomeStoreRatingModel {
     map['count'] = count;
     return map;
   }
-
 }

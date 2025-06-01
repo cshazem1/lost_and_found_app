@@ -4,6 +4,7 @@ import 'package:injectable/injectable.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 import 'end_points.dart';
+
 abstract class BaseDioHelper {
   Future<Response> post({
     required String endPoint,
@@ -47,6 +48,7 @@ abstract class BaseDioHelper {
     bool isMultipart = false,
   });
 }
+
 @LazySingleton(as: BaseDioHelper)
 class DioHelper extends BaseDioHelper {
   final String baseUrl = EndPoints.baseUrl;
@@ -97,7 +99,8 @@ class DioHelper extends BaseDioHelper {
       cancelToken: cancelToken,
       options: Options(
         headers: {
-          'Content-Type': isMultipart ? 'multipart/form-data' : 'application/json',
+          'Content-Type':
+              isMultipart ? 'multipart/form-data' : 'application/json',
           'Accept': 'application/json',
           if (token != null) 'Authorization': 'Bearer $token',
         },
@@ -126,7 +129,8 @@ class DioHelper extends BaseDioHelper {
       cancelToken: cancelToken,
       options: Options(
         headers: {
-          'Content-Type': isMultipart ? 'multipart/form-data' : 'application/json',
+          'Content-Type':
+              isMultipart ? 'multipart/form-data' : 'application/json',
           if (acceptJson) 'Accept': 'application/json',
           if (token != null) 'Authorization': 'Bearer $token',
         },
@@ -154,7 +158,8 @@ class DioHelper extends BaseDioHelper {
       cancelToken: cancelToken,
       options: Options(
         headers: {
-          'Content-Type': isMultipart ? 'multipart/form-data' : 'application/json',
+          'Content-Type':
+              isMultipart ? 'multipart/form-data' : 'application/json',
           'Accept': 'application/json',
           if (token != null) 'Authorization': 'Bearer $token',
         },
@@ -180,7 +185,8 @@ class DioHelper extends BaseDioHelper {
       cancelToken: cancelToken,
       options: Options(
         headers: {
-          'Content-Type': isMultipart ? 'multipart/form-data' : 'application/json',
+          'Content-Type':
+              isMultipart ? 'multipart/form-data' : 'application/json',
           'Accept': 'application/json',
           if (token != null) 'Authorization': 'Bearer $token',
         },

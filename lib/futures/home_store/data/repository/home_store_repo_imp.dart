@@ -8,8 +8,9 @@ import 'package:lost_and_found_app/futures/home_store/data/data_source/home_stor
 import 'package:lost_and_found_app/futures/home_store/domain/entity/home_store_entity.dart';
 
 import '../../domain/repository/home_store_repo.dart';
+
 @Injectable(as: HomeStoreRepo)
-class HomeStoreRepoImp extends HomeStoreRepo{
+class HomeStoreRepoImp extends HomeStoreRepo {
   HomeStoreDataSource homeStoreDataSource;
   HomeStoreRepoImp(this.homeStoreDataSource);
 
@@ -18,10 +19,8 @@ class HomeStoreRepoImp extends HomeStoreRepo{
     try {
       final data = await homeStoreDataSource.getHomeStoreData();
       return Right(data.map((e) => e.toEntity()).toList());
-    } on DioException catch (e) {
-      return Left(Failure.fromDioError(e));
+    } on Failure catch (e) {
+      return Left(e);
     }
-
   }
-
 }

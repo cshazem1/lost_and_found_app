@@ -3,13 +3,14 @@ import 'home_store_rating_model.dart';
 
 class HomeStoreModel {
   HomeStoreModel({
-      this.id, 
-      this.title, 
-      this.price, 
-      this.description, 
-      this.category, 
-      this.image, 
-      this.rating,});
+    this.id,
+    this.title,
+    this.price,
+    this.description,
+    this.category,
+    this.image,
+    this.rating,
+  });
 
   HomeStoreModel.fromJson(dynamic json) {
     id = json['id'];
@@ -18,11 +19,14 @@ class HomeStoreModel {
     description = json['description'];
     category = json['category'];
     image = json['image'];
-    rating = json['rating'] != null ? HomeStoreRatingModel.fromJson(json['rating']) : null;
+    rating =
+        json['rating'] != null
+            ? HomeStoreRatingModel.fromJson(json['rating'])
+            : null;
   }
   int? id;
   String? title;
-  double? price;
+  num? price;
   String? description;
   String? category;
   String? image;
@@ -44,11 +48,14 @@ class HomeStoreModel {
 
   HomeStoreEntity toEntity() {
     return HomeStoreEntity(
-      id: id??0,
-      price: price?.toString()??"0",
-      image: image??"",
-    name: title??"",
+      id: id ?? 0,
+      price: price?.toString() ?? "0",
+      image: image ?? "",
+      name: title ?? "",
+      category: category ?? "",
+
+      rate: rating?.rate ?? 0,
+      description: description ?? "",
     );
   }
-
 }
