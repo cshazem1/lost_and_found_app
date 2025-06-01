@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../generated/l10n.dart';
 import '../widgets/home_store_body.dart';
 
 class HomeStorePage extends StatelessWidget {
@@ -10,7 +11,7 @@ class HomeStorePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Home Store"),
+        title:  Text(S.current.store),
       ),
       body: const HomeStoreBody(),
     );
