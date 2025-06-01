@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       builder:
           (context, child) => MaterialApp(
-            initialRoute: AppRoutes.homeStore,
+            initialRoute: AppRoutes.splash,
             onGenerateRoute: AppRouter.onGenerateRoute,
             darkTheme: AppTheme.darkTheme,
             locale: Locale('en'),
