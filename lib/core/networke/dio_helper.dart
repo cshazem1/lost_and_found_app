@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
+import 'package:injectable/injectable.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 import 'end_points.dart';
@@ -46,7 +47,7 @@ abstract class BaseDioHelper {
     bool isMultipart = false,
   });
 }
-
+@LazySingleton(as: BaseDioHelper)
 class DioHelper extends BaseDioHelper {
   final String baseUrl = EndPoints.baseUrl;
 
