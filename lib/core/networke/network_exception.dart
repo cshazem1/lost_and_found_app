@@ -1,5 +1,8 @@
 import 'dart:io';
 import 'package:dio/dio.dart';
+import 'package:flutter/cupertino.dart';
+
+enum FailureType { network, model, unexpected }
 
 enum NetworkExceptionType {
   requestCancelled,
@@ -11,74 +14,98 @@ enum NetworkExceptionType {
   unexpectedError,
 }
 
-class NetworkExceptions {
-  final NetworkExceptionType type;
-  final String? message;
+abstract class Failure {
+  final FailureType type;
+  final NetworkExceptionType? networkType;
+  final String message;
 
-  NetworkExceptions._(this.type, [this.message]);
+  const Failure(this.type, this.networkType, this.message);
 
-  static NetworkExceptions requestCancelled() =>
-      NetworkExceptions._(NetworkExceptionType.requestCancelled, "Request was cancelled");
-
-  static NetworkExceptions unauthorizedRequest(String message) =>
-      NetworkExceptions._(NetworkExceptionType.unauthorizedRequest, message);
-
-  static NetworkExceptions badRequest() =>
-      NetworkExceptions._(NetworkExceptionType.badRequest, "Bad request");
-
-  static NetworkExceptions notFound() =>
-      NetworkExceptions._(NetworkExceptionType.notFound, "Resource not found");
-
-  static NetworkExceptions requestTimeout() =>
-      NetworkExceptions._(NetworkExceptionType.requestTimeout, "Request timeout");
-
-  static NetworkExceptions noInternetConnection() =>
-      NetworkExceptions._(NetworkExceptionType.noInternetConnection, "No internet connection");
-
-  static NetworkExceptions unexpectedError() =>
-      NetworkExceptions._(NetworkExceptionType.unexpectedError, "Unexpected error occurred");
-
-  static NetworkExceptions fromResponse(Response? response) {
-    if (response == null) {
-      return NetworkExceptions.unexpectedError();
-    }
-
-    switch (response.statusCode) {
-      case 400:
-        return NetworkExceptions.badRequest();
-      case 401:
-        return NetworkExceptions.unauthorizedRequest("Unauthorized: ${response.statusMessage}");
-      case 404:
-        return NetworkExceptions.notFound();
-      case 408:
-        return NetworkExceptions.requestTimeout();
-      default:
-        return NetworkExceptions.unexpectedError();
-    }
+  @override
+  String toString() {
+    return 'Failure(type: $type, networkType: $networkType, message: $message)';
   }
+}
 
-  static NetworkExceptions fromDioError(DioException error) {
-    switch (error.type) {
-      case DioExceptionType.cancel:
-        return NetworkExceptions.requestCancelled();
-      case DioExceptionType.connectionTimeout:
-      case DioExceptionType.sendTimeout:
-      case DioExceptionType.receiveTimeout:
-        return NetworkExceptions.requestTimeout();
-      case DioExceptionType.badResponse:
-        return NetworkExceptions.fromResponse(error.response);
-      case DioExceptionType.connectionError:
-        return NetworkExceptions.noInternetConnection();
-      case DioExceptionType.unknown:
-      default:
-        if (error.error is SocketException) {
-          return NetworkExceptions.noInternetConnection();
-        }
-        return NetworkExceptions.unexpectedError();
-    }
-  }
+class NetworkFailure extends Failure {
+  const NetworkFailure(NetworkExceptionType networkType, String message)
+    : super(FailureType.network, networkType, message);
+}
 
-  String getErrorMessage() {
-    return message ?? "An error occurred";
+class UnexpectedFailure extends Failure {
+  const UnexpectedFailure(String message)
+    : super(FailureType.unexpected, null, message);
+}
+
+Failure failureFromDioError(DioException error) {
+  switch (error.type) {
+    case DioExceptionType.cancel:
+      return const NetworkFailure(
+        NetworkExceptionType.requestCancelled,
+        "Request was cancelled",
+      );
+
+    case DioExceptionType.connectionTimeout:
+    case DioExceptionType.sendTimeout:
+    case DioExceptionType.receiveTimeout:
+      return const NetworkFailure(
+        NetworkExceptionType.requestTimeout,
+        "Request timeout",
+      );
+
+    case DioExceptionType.badResponse:
+      final statusCode = error.response?.statusCode ?? 0;
+      switch (statusCode) {
+        case 400:
+          return const NetworkFailure(
+            NetworkExceptionType.badRequest,
+            "Bad request",
+          );
+        case 401:
+          return NetworkFailure(
+            NetworkExceptionType.unauthorizedRequest,
+            "Unauthorized: ${error.response?.statusMessage}",
+          );
+        case 404:
+          return const NetworkFailure(
+            NetworkExceptionType.notFound,
+            "Resource not found",
+          );
+        case 408:
+          return const NetworkFailure(
+            NetworkExceptionType.requestTimeout,
+            "Request timeout",
+          );
+        default:
+          return const NetworkFailure(
+            NetworkExceptionType.unexpectedError,
+            "Unexpected error",
+          );
+      }
+
+    case DioExceptionType.connectionError:
+      if (error.error is SocketException) {
+        return const NetworkFailure(
+          NetworkExceptionType.noInternetConnection,
+          "No internet connection",
+        );
+      }
+      return const NetworkFailure(
+        NetworkExceptionType.unexpectedError,
+        "Unexpected error",
+      );
+
+    case DioExceptionType.unknown:
+    default:
+      return const NetworkFailure(
+        NetworkExceptionType.unexpectedError,
+        "Unexpected error",
+      );
   }
+}
+
+void logAndThrow(String message) {
+  const red = '\x1B[31m';
+  const reset = '\x1B[0m';
+  debugPrint('$red❌ $message$reset');
 }

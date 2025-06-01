@@ -1,31 +1,32 @@
 import 'package:flutter/material.dart';
+import 'app_colors.dart';
 
 class AppTheme {
   static final ThemeData lightTheme = ThemeData(
     brightness: Brightness.light,
-    primaryColor: Colors.blue,
-    scaffoldBackgroundColor: Colors.white,
+    primaryColor: AppColors.lightPrimary,
+    scaffoldBackgroundColor: AppColors.lightScaffoldBackground,
     appBarTheme: const AppBarTheme(
-      backgroundColor: Colors.blue,
-      foregroundColor: Colors.white,
+      backgroundColor: AppColors.lightAppBarBackground,
+      foregroundColor: AppColors.lightAppBarForeground,
     ),
     textTheme: Typography.blackMountainView.copyWith(
-      bodyMedium: TextStyle(color: Colors.black87),
-      bodySmall: TextStyle(color: Colors.black54),
+      bodyMedium: const TextStyle(color: AppColors.lightTextPrimary),
+      bodySmall: const TextStyle(color: AppColors.lightTextSecondary),
     ),
   );
 
   static final ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
-    primaryColor: Colors.teal,
-    scaffoldBackgroundColor: Colors.black,
+    primaryColor: AppColors.darkPrimary,
+    scaffoldBackgroundColor: AppColors.darkScaffoldBackground,
     appBarTheme: const AppBarTheme(
-      backgroundColor: Colors.teal,
-      foregroundColor: Colors.white,
+      backgroundColor: AppColors.darkAppBarBackground,
+      foregroundColor: AppColors.darkAppBarForeground,
     ),
     textTheme: Typography.whiteMountainView.copyWith(
-      bodyMedium: TextStyle(color: Colors.white),
-      bodySmall: TextStyle(color: Colors.white70),
+      bodyMedium: const TextStyle(color: AppColors.darkTextPrimary),
+      bodySmall: const TextStyle(color: AppColors.darkTextSecondary),
     ),
   );
 }
