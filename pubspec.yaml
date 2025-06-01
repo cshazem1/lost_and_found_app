@@ -11,24 +11,26 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
 
   cupertino_icons: ^1.0.8
   flutter_screenutil: ^5.9.3
   pretty_dio_logger: ^1.4.0
   dio: ^5.8.0+1
   flutter_bloc: ^9.1.1
-  injectable_generator: ^2.7.0
   get_it: ^8.0.3
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
+  injectable_generator: ^2.7.0
   flutter_lints: ^5.0.0
   build_runner: ^2.4.15
+  intl_utils: ^2.6.0
+
 
 flutter:
-
+  generate: true
   uses-material-design: true
 
   assets:
