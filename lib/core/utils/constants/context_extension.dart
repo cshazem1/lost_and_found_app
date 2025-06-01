@@ -9,18 +9,5 @@ extension ContextExtension on BuildContext {
 
   double get height => mediaQuery.size.height;
 
-  Future<T?> push<T>(Widget page) {
-    return Navigator.push<T>(this, MaterialPageRoute(builder: (_) => page));
-  }
-
-  Future<T?> pushReplacement<T, TO>(Widget page) {
-    return Navigator.pushReplacement<T, TO>(
-      this,
-      MaterialPageRoute(builder: (_) => page),
-    );
-  }
-
-  void pop<T extends Object?>([T? result]) {
-    Navigator.pop(this, result);
-  }
+  NavigatorState get navigator => Navigator.of(this);
 }
