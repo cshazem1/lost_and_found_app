@@ -33,7 +33,6 @@ abstract class BaseDioHelper {
     String? token,
     CancelToken? cancelToken,
     int? timeOut,
-    required String lang,
     bool isMultipart = false,
   });
 
@@ -88,7 +87,6 @@ class DioHelper extends BaseDioHelper {
     String? token,
     CancelToken? cancelToken,
     int? timeOut,
-    required String lang,
     bool isMultipart = false,
   }) async {
     final dio = _createDio();
@@ -98,7 +96,6 @@ class DioHelper extends BaseDioHelper {
       cancelToken: cancelToken,
       options: Options(
         headers: {
-          'lang': lang,
           'Content-Type': isMultipart ? 'multipart/form-data' : 'application/json',
           'Accept': 'application/json',
           if (token != null) 'Authorization': 'Bearer $token',

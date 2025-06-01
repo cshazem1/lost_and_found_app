@@ -7,11 +7,8 @@ import 'app_routes.dart';
 abstract class AppRouter {
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
-      case AppRoutes.home:
-        return platformRoute(Text("1"));
       default:
-        return platformRoute(Text("2"));
+        return platformRoute(Text("Error"));
     }
   }
-
 }
