@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder:(context, child) =>  MaterialApp(
-        initialRoute: AppRoutes.splash,
+        initialRoute: AppRoutes.homeStore,
         onGenerateRoute: AppRouter.onGenerateRoute,
         darkTheme: AppTheme.darkTheme,
         theme: AppTheme.lightTheme,
