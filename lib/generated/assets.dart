@@ -6,6 +6,8 @@ class Assets {
   static const String iconsFaceBookLight = 'assets/icons/face_book_light.svg';
   static const String iconsGoogleDark = 'assets/icons/google_dark.svg';
   static const String iconsGoogleLight = 'assets/icons/google_light.svg';
+  static const String imagesNativeSplash = 'assets/images/native_splash.jpg';
+  static const String imagesNativeSplashCycle = 'assets/images/native_splash_cycle.png';
   static const String imagesSplashDark = 'assets/images/splash_dark.png';
   static const String imagesSplashLight = 'assets/images/splash_light.png';
 

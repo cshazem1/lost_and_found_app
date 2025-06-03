@@ -23,6 +23,7 @@ dependencies:
   equatable: ^2.0.7
   dartz: ^0.10.1
   injectable: ^2.5.0
+  flutter_native_splash: ^2.4.6
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -30,8 +31,12 @@ dev_dependencies:
   flutter_lints: ^5.0.0
   build_runner: ^2.4.15
   intl_utils: ^2.6.0
+  flutter_launcher_icons: ^0.13.1
 
-
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/native_splash.jpg"
 flutter:
   generate: true
   uses-material-design: true
