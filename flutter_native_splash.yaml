@@ -1,0 +1,17 @@
+flutter_native_splash:
+  color: "#ffffff" # لون الخلفية
+  image: assets/images/native_splash.jpg # شعار التطبيق (يفضل PNG بدون خلفية)
+  android: true
+  ios: true
+  fullscreen: true
+  android_12:
+
+    color: "#ffffff"
+    image: assets/images/native_splash.jpg
+
+    #dark-mode - for android 12
+    image_dark: assets/images/native_splash.jpg
+    color_dark: "#ffffff"
+
+
+
