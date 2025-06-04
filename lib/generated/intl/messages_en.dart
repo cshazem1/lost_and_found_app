@@ -22,7 +22,44 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "confirmPassword": MessageLookupByLibrary.simpleMessage("Confirm Password"),
+    "email": MessageLookupByLibrary.simpleMessage("Email"),
+    "enterYourConfirmPassword": MessageLookupByLibrary.simpleMessage(
+      "Enter your confirm password",
+    ),
+    "enterYourEmail": MessageLookupByLibrary.simpleMessage("Enter your email"),
+    "enterYourName": MessageLookupByLibrary.simpleMessage("Enter your name"),
+    "enterYourPassword": MessageLookupByLibrary.simpleMessage(
+      "Enter your password",
+    ),
     "hello": MessageLookupByLibrary.simpleMessage("Hello"),
+    "invalidEmail": MessageLookupByLibrary.simpleMessage(
+      "Please enter a valid email address",
+    ),
+    "letsGetStarted": MessageLookupByLibrary.simpleMessage(
+      "Let’s Get Started!",
+    ),
+    "name": MessageLookupByLibrary.simpleMessage("Name"),
+    "password": MessageLookupByLibrary.simpleMessage("Password"),
+    "passwordMustContainDigit": MessageLookupByLibrary.simpleMessage(
+      "Password must contain at least one digit",
+    ),
+    "passwordMustContainLowercase": MessageLookupByLibrary.simpleMessage(
+      "Password must contain at least one lowercase letter",
+    ),
+    "passwordMustContainSpecialChar": MessageLookupByLibrary.simpleMessage(
+      "Password must contain at least one special character",
+    ),
+    "passwordMustContainUppercase": MessageLookupByLibrary.simpleMessage(
+      "Password must contain at least one uppercase letter",
+    ),
+    "passwordTooShort": MessageLookupByLibrary.simpleMessage(
+      "Password must be at least 8 characters",
+    ),
+    "passwordsDoNotMatch": MessageLookupByLibrary.simpleMessage(
+      "Passwords do not match",
+    ),
+    "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
     "store": MessageLookupByLibrary.simpleMessage("Store"),
     "welcome": MessageLookupByLibrary.simpleMessage("Welcome to the app!"),
   };

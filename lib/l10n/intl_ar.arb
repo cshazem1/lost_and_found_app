@@ -2,5 +2,22 @@
   "@@locale": "ar",
   "hello": "مرحبًا",
   "welcome": "أهلاً بك في التطبيق!",
-  "store": "المتجر"
+  "store": "المتجر",
+  "signUp": "تسجيل جديد",
+  "letsGetStarted": "لنبدأ !!",
+  "enterYourName": "ادخل اسمك",
+  "name": "الاسم",
+  "enterYourEmail": "ادخل بريدك الإلكتروني",
+  "email": "البريد الإلكتروني",
+  "enterYourPassword": "ادخل كلمة المرور",
+  "password": "كلمة المرور",
+  "enterYourConfirmPassword": "ادخل تأكيد كلمة المرور",
+  "confirmPassword": "تأكيد كلمة المرور",
+  "invalidEmail": "من فضلك أدخل بريد إلكتروني صالح",
+  "passwordTooShort": "يجب أن تكون كلمة المرور 8 أحرف على الأقل",
+  "passwordMustContainUppercase": "يجب أن تحتوي كلمة المرور على حرف كبير واحد على الأقل",
+  "passwordMustContainLowercase": "يجب أن تحتوي كلمة المرور على حرف صغير واحد على الأقل",
+  "passwordMustContainDigit": "يجب أن تحتوي كلمة المرور على رقم واحد على الأقل",
+  "passwordMustContainSpecialChar": "يجب أن تحتوي كلمة المرور على رمز خاص واحد على الأقل",
+  "passwordsDoNotMatch": "كلمتا المرور غير متطابقتين"
 }

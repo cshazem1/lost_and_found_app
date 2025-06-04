@@ -1,0 +1,3 @@
+enum AuthEnum {
+  login,signUp
+}

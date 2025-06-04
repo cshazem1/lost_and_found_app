@@ -2,5 +2,22 @@
   "@@locale": "en",
   "hello": "Hello",
   "welcome": "Welcome to the app!",
-  "store": "Store"
+  "store": "Store",
+  "signUp": "Sign Up",
+  "letsGetStarted": "Let’s Get Started!",
+  "enterYourName": "Enter your name",
+  "name": "Name",
+  "enterYourEmail": "Enter your email",
+  "email": "Email",
+  "enterYourPassword": "Enter your password",
+  "password": "Password",
+  "enterYourConfirmPassword": "Enter your confirm password",
+  "confirmPassword": "Confirm Password",
+  "invalidEmail": "Please enter a valid email address",
+  "passwordTooShort": "Password must be at least 8 characters",
+  "passwordMustContainUppercase": "Password must contain at least one uppercase letter",
+  "passwordMustContainLowercase": "Password must contain at least one lowercase letter",
+  "passwordMustContainDigit": "Password must contain at least one digit",
+  "passwordMustContainSpecialChar": "Password must contain at least one special character",
+  "passwordsDoNotMatch": "Passwords do not match"
 }

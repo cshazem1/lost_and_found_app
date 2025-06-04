@@ -73,6 +73,156 @@ class S {
   String get store {
     return Intl.message('Store', name: 'store', desc: '', args: []);
   }
+
+  /// `Sign Up`
+  String get signUp {
+    return Intl.message('Sign Up', name: 'signUp', desc: '', args: []);
+  }
+
+  /// `Let’s Get Started!`
+  String get letsGetStarted {
+    return Intl.message(
+      'Let’s Get Started!',
+      name: 'letsGetStarted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your name`
+  String get enterYourName {
+    return Intl.message(
+      'Enter your name',
+      name: 'enterYourName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name`
+  String get name {
+    return Intl.message('Name', name: 'name', desc: '', args: []);
+  }
+
+  /// `Enter your email`
+  String get enterYourEmail {
+    return Intl.message(
+      'Enter your email',
+      name: 'enterYourEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email`
+  String get email {
+    return Intl.message('Email', name: 'email', desc: '', args: []);
+  }
+
+  /// `Enter your password`
+  String get enterYourPassword {
+    return Intl.message(
+      'Enter your password',
+      name: 'enterYourPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get password {
+    return Intl.message('Password', name: 'password', desc: '', args: []);
+  }
+
+  /// `Enter your confirm password`
+  String get enterYourConfirmPassword {
+    return Intl.message(
+      'Enter your confirm password',
+      name: 'enterYourConfirmPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm Password`
+  String get confirmPassword {
+    return Intl.message(
+      'Confirm Password',
+      name: 'confirmPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a valid email address`
+  String get invalidEmail {
+    return Intl.message(
+      'Please enter a valid email address',
+      name: 'invalidEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password must be at least 8 characters`
+  String get passwordTooShort {
+    return Intl.message(
+      'Password must be at least 8 characters',
+      name: 'passwordTooShort',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password must contain at least one uppercase letter`
+  String get passwordMustContainUppercase {
+    return Intl.message(
+      'Password must contain at least one uppercase letter',
+      name: 'passwordMustContainUppercase',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password must contain at least one lowercase letter`
+  String get passwordMustContainLowercase {
+    return Intl.message(
+      'Password must contain at least one lowercase letter',
+      name: 'passwordMustContainLowercase',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password must contain at least one digit`
+  String get passwordMustContainDigit {
+    return Intl.message(
+      'Password must contain at least one digit',
+      name: 'passwordMustContainDigit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password must contain at least one special character`
+  String get passwordMustContainSpecialChar {
+    return Intl.message(
+      'Password must contain at least one special character',
+      name: 'passwordMustContainSpecialChar',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Passwords do not match`
+  String get passwordsDoNotMatch {
+    return Intl.message(
+      'Passwords do not match',
+      name: 'passwordsDoNotMatch',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

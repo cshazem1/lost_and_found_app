@@ -6,6 +6,9 @@ class AppColors {
   static const Color steelBlue = Color(0xFF769DAD);
   static const Color skyBlue = Color(0xFF8EDDFF);
   static const Color amber = Colors.amber;
+  static const Color green = Color(0xFF009688);
+  static const Color white = Color(0xFFFFFFFF);
+  static const Color red = Color(0xFFFF0000);
 
   static const Color lightPrimary = Color(0xFF2196F3);
   static const Color lightScaffoldBackground = Color(0xFFFFFFFF);

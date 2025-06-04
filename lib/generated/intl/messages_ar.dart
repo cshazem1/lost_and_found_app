@@ -22,7 +22,46 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "confirmPassword": MessageLookupByLibrary.simpleMessage(
+      "تأكيد كلمة المرور",
+    ),
+    "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+    "enterYourConfirmPassword": MessageLookupByLibrary.simpleMessage(
+      "ادخل تأكيد كلمة المرور",
+    ),
+    "enterYourEmail": MessageLookupByLibrary.simpleMessage(
+      "ادخل بريدك الإلكتروني",
+    ),
+    "enterYourName": MessageLookupByLibrary.simpleMessage("ادخل اسمك"),
+    "enterYourPassword": MessageLookupByLibrary.simpleMessage(
+      "ادخل كلمة المرور",
+    ),
     "hello": MessageLookupByLibrary.simpleMessage("مرحبًا"),
+    "invalidEmail": MessageLookupByLibrary.simpleMessage(
+      "من فضلك أدخل بريد إلكتروني صالح",
+    ),
+    "letsGetStarted": MessageLookupByLibrary.simpleMessage("لنبدأ !!"),
+    "name": MessageLookupByLibrary.simpleMessage("الاسم"),
+    "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+    "passwordMustContainDigit": MessageLookupByLibrary.simpleMessage(
+      "يجب أن تحتوي كلمة المرور على رقم واحد على الأقل",
+    ),
+    "passwordMustContainLowercase": MessageLookupByLibrary.simpleMessage(
+      "يجب أن تحتوي كلمة المرور على حرف صغير واحد على الأقل",
+    ),
+    "passwordMustContainSpecialChar": MessageLookupByLibrary.simpleMessage(
+      "يجب أن تحتوي كلمة المرور على رمز خاص واحد على الأقل",
+    ),
+    "passwordMustContainUppercase": MessageLookupByLibrary.simpleMessage(
+      "يجب أن تحتوي كلمة المرور على حرف كبير واحد على الأقل",
+    ),
+    "passwordTooShort": MessageLookupByLibrary.simpleMessage(
+      "يجب أن تكون كلمة المرور 8 أحرف على الأقل",
+    ),
+    "passwordsDoNotMatch": MessageLookupByLibrary.simpleMessage(
+      "كلمتا المرور غير متطابقتين",
+    ),
+    "signUp": MessageLookupByLibrary.simpleMessage("تسجيل جديد"),
     "store": MessageLookupByLibrary.simpleMessage("المتجر"),
     "welcome": MessageLookupByLibrary.simpleMessage("أهلاً بك في التطبيق!"),
   };

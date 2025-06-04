@@ -26,7 +26,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
     });
 
     Future.delayed(const Duration(seconds: 3), () {
-      context.navigator.pushReplacementNamed(AppRoutes.homeStore);
+      context.navigator.pushReplacementNamed(AppRoutes.signUp);
     });
   }
 
