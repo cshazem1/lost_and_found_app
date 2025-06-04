@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -8,12 +9,20 @@ import 'core/helpers/app_bloc_observer.dart';
 import 'core/routing/app_router.dart';
 import 'core/routing/app_routes.dart';
 import 'core/theme/app_theme.dart';
+import 'firebase_options.dart';
 import 'generated/l10n.dart';
 
-Future<void> main() async {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  initialization();
+  runApp(const MyApp());
+}
+Future<void> initialization() async {
   Bloc.observer = AppBlocObserver();
   await configureDependencies();
-  runApp(const MyApp());
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 }
 
 class MyApp extends StatelessWidget {
