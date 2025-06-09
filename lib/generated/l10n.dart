@@ -154,10 +154,10 @@ class S {
     );
   }
 
-  /// `Please enter a valid email address`
+  /// `The email address is invalid.`
   String get invalidEmail {
     return Intl.message(
-      'Please enter a valid email address',
+      'The email address is invalid.',
       name: 'invalidEmail',
       desc: '',
       args: [],
@@ -219,6 +219,76 @@ class S {
     return Intl.message(
       'Passwords do not match',
       name: 'passwordsDoNotMatch',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Check your email`
+  String get checkYourEmail {
+    return Intl.message(
+      'Check your email',
+      name: 'checkYourEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Verification email sent to your email`
+  String get verificationEmailSentMessage {
+    return Intl.message(
+      'Verification email sent to your email',
+      name: 'verificationEmailSentMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The email is already in use.`
+  String get emailAlreadyInUse {
+    return Intl.message(
+      'The email is already in use.',
+      name: 'emailAlreadyInUse',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The password is too weak.`
+  String get weakPassword {
+    return Intl.message(
+      'The password is too weak.',
+      name: 'weakPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No user found with this email.`
+  String get userNotFound {
+    return Intl.message(
+      'No user found with this email.',
+      name: 'userNotFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Wrong password.`
+  String get wrongPassword {
+    return Intl.message(
+      'Wrong password.',
+      name: 'wrongPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `An unexpected error occurred.`
+  String get unexpectedError {
+    return Intl.message(
+      'An unexpected error occurred.',
+      name: 'unexpectedError',
       desc: '',
       args: [],
     );

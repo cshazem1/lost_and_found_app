@@ -19,5 +19,14 @@
   "passwordMustContainLowercase": "Password must contain at least one lowercase letter",
   "passwordMustContainDigit": "Password must contain at least one digit",
   "passwordMustContainSpecialChar": "Password must contain at least one special character",
-  "passwordsDoNotMatch": "Passwords do not match"
+  "passwordsDoNotMatch": "Passwords do not match",
+  "checkYourEmail": "Check your email",
+  "verificationEmailSentMessage": "Verification email sent to your email",
+  "emailAlreadyInUse": "The email is already in use.",
+  "invalidEmail": "The email address is invalid.",
+  "weakPassword": "The password is too weak.",
+  "userNotFound": "No user found with this email.",
+  "wrongPassword": "Wrong password.",
+  "unexpectedError": "An unexpected error occurred."
+
 }

@@ -19,5 +19,14 @@
   "passwordMustContainLowercase": "يجب أن تحتوي كلمة المرور على حرف صغير واحد على الأقل",
   "passwordMustContainDigit": "يجب أن تحتوي كلمة المرور على رقم واحد على الأقل",
   "passwordMustContainSpecialChar": "يجب أن تحتوي كلمة المرور على رمز خاص واحد على الأقل",
-  "passwordsDoNotMatch": "كلمتا المرور غير متطابقتين"
+  "passwordsDoNotMatch": "كلمتا المرور غير متطابقتين",
+  "checkYourEmail": "تحقق من بريدك الإلكتروني",
+  "verificationEmailSentMessage": "تم ارسال رسالة التحقق لبريدك الإلكتروني",
+  "emailAlreadyInUse": "هذا البريد الإلكتروني مستخدم من قبل.",
+  "invalidEmail": "البريد الإلكتروني غير صالح.",
+  "weakPassword": "كلمة المرور ضعيفة جداً.",
+  "userNotFound": "لا يوجد مستخدم بهذا البريد.",
+  "wrongPassword": "كلمة المرور غير صحيحة.",
+  "unexpectedError": "حدث خطأ غير متوقع."
+
 }

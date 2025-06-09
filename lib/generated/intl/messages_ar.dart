@@ -22,10 +22,16 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "checkYourEmail": MessageLookupByLibrary.simpleMessage(
+      "تحقق من بريدك الإلكتروني",
+    ),
     "confirmPassword": MessageLookupByLibrary.simpleMessage(
       "تأكيد كلمة المرور",
     ),
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+    "emailAlreadyInUse": MessageLookupByLibrary.simpleMessage(
+      "هذا البريد الإلكتروني مستخدم من قبل.",
+    ),
     "enterYourConfirmPassword": MessageLookupByLibrary.simpleMessage(
       "ادخل تأكيد كلمة المرور",
     ),
@@ -38,7 +44,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "hello": MessageLookupByLibrary.simpleMessage("مرحبًا"),
     "invalidEmail": MessageLookupByLibrary.simpleMessage(
-      "من فضلك أدخل بريد إلكتروني صالح",
+      "البريد الإلكتروني غير صالح.",
     ),
     "letsGetStarted": MessageLookupByLibrary.simpleMessage("لنبدأ !!"),
     "name": MessageLookupByLibrary.simpleMessage("الاسم"),
@@ -63,6 +69,21 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "signUp": MessageLookupByLibrary.simpleMessage("تسجيل جديد"),
     "store": MessageLookupByLibrary.simpleMessage("المتجر"),
+    "unexpectedError": MessageLookupByLibrary.simpleMessage(
+      "حدث خطأ غير متوقع.",
+    ),
+    "userNotFound": MessageLookupByLibrary.simpleMessage(
+      "لا يوجد مستخدم بهذا البريد.",
+    ),
+    "verificationEmailSentMessage": MessageLookupByLibrary.simpleMessage(
+      "تم ارسال رسالة التحقق لبريدك الإلكتروني",
+    ),
+    "weakPassword": MessageLookupByLibrary.simpleMessage(
+      "كلمة المرور ضعيفة جداً.",
+    ),
     "welcome": MessageLookupByLibrary.simpleMessage("أهلاً بك في التطبيق!"),
+    "wrongPassword": MessageLookupByLibrary.simpleMessage(
+      "كلمة المرور غير صحيحة.",
+    ),
   };
 }

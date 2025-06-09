@@ -22,8 +22,12 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "checkYourEmail": MessageLookupByLibrary.simpleMessage("Check your email"),
     "confirmPassword": MessageLookupByLibrary.simpleMessage("Confirm Password"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
+    "emailAlreadyInUse": MessageLookupByLibrary.simpleMessage(
+      "The email is already in use.",
+    ),
     "enterYourConfirmPassword": MessageLookupByLibrary.simpleMessage(
       "Enter your confirm password",
     ),
@@ -34,7 +38,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "hello": MessageLookupByLibrary.simpleMessage("Hello"),
     "invalidEmail": MessageLookupByLibrary.simpleMessage(
-      "Please enter a valid email address",
+      "The email address is invalid.",
     ),
     "letsGetStarted": MessageLookupByLibrary.simpleMessage(
       "Let’s Get Started!",
@@ -61,6 +65,19 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
     "store": MessageLookupByLibrary.simpleMessage("Store"),
+    "unexpectedError": MessageLookupByLibrary.simpleMessage(
+      "An unexpected error occurred.",
+    ),
+    "userNotFound": MessageLookupByLibrary.simpleMessage(
+      "No user found with this email.",
+    ),
+    "verificationEmailSentMessage": MessageLookupByLibrary.simpleMessage(
+      "Verification email sent to your email",
+    ),
+    "weakPassword": MessageLookupByLibrary.simpleMessage(
+      "The password is too weak.",
+    ),
     "welcome": MessageLookupByLibrary.simpleMessage("Welcome to the app!"),
+    "wrongPassword": MessageLookupByLibrary.simpleMessage("Wrong password."),
   };
 }

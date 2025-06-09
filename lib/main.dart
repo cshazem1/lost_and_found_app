@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
             initialRoute: AppRoutes.splash,
             onGenerateRoute: AppRouter.onGenerateRoute,
             darkTheme: AppTheme.darkTheme,
-            locale: Locale('en'),
+            locale: Locale('ar'),
             localizationsDelegates: const [
               S.delegate,
               GlobalMaterialLocalizations.delegate,

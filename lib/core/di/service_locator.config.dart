@@ -12,6 +12,14 @@
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 import 'package:lost_and_found_app/core/networke/dio_helper.dart' as _i522;
+import 'package:lost_and_found_app/futures/auth/data/repository/auth_repository_impl.dart'
+    as _i855;
+import 'package:lost_and_found_app/futures/auth/domain/repository/auth_repository.dart'
+    as _i41;
+import 'package:lost_and_found_app/futures/auth/domain/use_cases/sign_up_use_case.dart'
+    as _i536;
+import 'package:lost_and_found_app/futures/auth/presentaion/cubits/auth_cubit.dart'
+    as _i546;
 import 'package:lost_and_found_app/futures/home_store/data/data_source/home_store_data_source.dart'
     as _i647;
 import 'package:lost_and_found_app/futures/home_store/data/repository/home_store_repo_imp.dart'
@@ -28,7 +36,14 @@ extension GetItInjectableX on _i174.GetIt {
     _i526.EnvironmentFilter? environmentFilter,
   }) {
     final gh = _i526.GetItHelper(this, environment, environmentFilter);
+    gh.lazySingleton<_i41.AuthRepository>(() => _i855.AuthRepositoryImpl());
     gh.lazySingleton<_i522.BaseDioHelper>(() => _i522.DioHelper());
+    gh.lazySingleton<_i536.SignUpUseCase>(
+      () => _i536.SignUpUseCase(gh<_i41.AuthRepository>()),
+    );
+    gh.factory<_i546.AuthCubit>(
+      () => _i546.AuthCubit(gh<_i536.SignUpUseCase>()),
+    );
     gh.lazySingleton<_i647.HomeStoreDataSource>(
       () => _i647.HomeStoreDataSourceImpl(gh<_i522.BaseDioHelper>()),
     );
